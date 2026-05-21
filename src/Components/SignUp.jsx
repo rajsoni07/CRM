@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Signupform.css";
 import API_URL from "../config";
 
