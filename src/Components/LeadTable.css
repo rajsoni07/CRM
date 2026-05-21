@@ -1,0 +1,168 @@
+/* LeadTable.css - updated */
+
+/* Container */
+.leads-list {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(18, 38, 63, 0.06);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.leads-list h2 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #102a43;
+}
+
+/* Table */
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  table-layout: auto;
+}
+
+.leads-table thead th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-bottom: 2px solid #eef3f8;
+  color: #0b2545;
+}
+
+/* narrow number and actions columns */
+.leads-table thead th:first-child { width: 48px; text-align: center; }
+.leads-table thead th:last-child { width: 140px; text-align: center; }
+
+/* body cells */
+.leads-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #123;
+  vertical-align: middle;
+}
+
+/* hover */
+.leads-table tbody tr:hover {
+  background: rgba(2, 6, 23, 0.03);
+}
+
+/* avatar / name */
+.lead-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 36px;
+  text-align: center;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #0b2545;
+}
+
+/* status badges (generic) */
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* specific status colours you use */
+.status.New { background: rgba(13, 110, 253, 0.08); color: #0d6efd; }
+.status.Contacted { background: rgba(13, 60, 255, 0.06); color: #0d3cff; }
+.status.Qualified { background: rgba(5, 150, 105, 0.08); color: #059669; }
+.status.Lost { background: rgba(220, 38, 38, 0.06); color: #dc2626; }
+.status.Won { background: rgba(6, 95, 70, 0.08); color: #065f46; }
+
+/* action buttons (moved out of media query) */
+.action-btn {
+  margin-right: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  min-width: 56px;
+}
+
+.action-btn.edit {
+  background: #0d6efd;
+  color: white;
+}
+
+.action-btn.save {
+  background: #16a34a;
+  color: white;
+}
+
+.action-btn.cancel {
+  background: #ef4444;
+  color: white;
+}
+
+/* inputs/selects inside table for edit state */
+.leads-table input,
+.leads-table select,
+.leads-table textarea {
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #e6eef6;
+  font-size: 14px;
+}
+
+/* ensure small inputs don't overflow actions column */
+.leads-table td .action-btn { white-space: nowrap; }
+
+/* Responsive behaviour */
+@media (max-width: 760px) {
+  .leads-list { padding: 12px; }
+  .leads-table thead { display: none; }
+
+  .leads-table,
+  .leads-table tbody,
+  .leads-table tr,
+  .leads-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .leads-table tr { margin-bottom: 12px; border-radius: 8px; background: #fff; box-shadow: 0 2px 8px rgba(2,6,23,0.02); }
+
+  .leads-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  /* attribute-based labels for mobile */
+  .leads-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    width: calc(50% - 24px);
+    text-align: left;
+    font-weight: 600;
+    color: #0b2545;
+  }
+
+  /* make actions flow nicely */
+  .action-btn { margin-top: 8px; margin-right: 8px; }
+}

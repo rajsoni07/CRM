@@ -1,0 +1,106 @@
+/* LeadForm.css - clean and aligned form */
+.lead-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(18, 38, 63, 0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+.lead-form__title {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #102a43;
+}
+
+.lead-form__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.lead-form__label {
+  font-size: 14px;
+  color: #0b2545;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #dc2626;
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.lead-form__input,
+.lead-form__select,
+.lead-form__textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lead-form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.lead-form__input:focus,
+.lead-form__select:focus,
+.lead-form__textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Button row */
+.lead-form__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  background: #0d6efd;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #0b5ed7;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive: label inline only on large screens */
+@media (min-width: 860px) {
+  .lead-form__row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .lead-form__label {
+    width: 160px;
+    margin-right: 12px;
+    margin-bottom: 0; /* remove vertical gap */
+    text-align: right;
+  }
+  .lead-form__input,
+  .lead-form__select,
+  .lead-form__textarea {
+    flex: 1;
+  }
+}
