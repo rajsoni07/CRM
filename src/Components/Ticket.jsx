@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Ticket.css";
-
+import API_URL from "../config";
 function Ticket({ onTicketAdded }) {
   const [subject, setSubject] = useState("");
   const [service, setService] = useState("");
@@ -43,7 +43,7 @@ function Ticket({ onTicketAdded }) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/api/tickets", {
+      const res = await fetch(`${API_URL}/api/tickets`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

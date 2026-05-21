@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TicketTable.css";
+import API_URL from "../config";
 
 const TicketTable = () => {
   const [tickets, setTickets] = useState([]);
@@ -13,7 +14,7 @@ const TicketTable = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch("http://localhost:5001/api/tickets", {
+        const res = await fetch(`${API_URL}/api/tickets`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

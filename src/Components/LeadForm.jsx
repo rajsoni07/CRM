@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import "./LeadForm.css";
-
+import API_URL from "../config";
 
 function LeadForm({onLeadAdded}) {
   const [name, setName] = useState("");
@@ -34,7 +34,7 @@ function LeadForm({onLeadAdded}) {
     setLoading(true);
     try{
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5001/api/leads",{
+      const res = await fetch(`${API_URL}/api/leads`,{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

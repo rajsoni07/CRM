@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./LeadTable.css";
+import API_URL from "../config";
 
 const LeadsTable = () => {
   const [leads, setLeads] = useState([]);
@@ -21,7 +22,7 @@ const LeadsTable = () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5001/api/leads",
+          `${API_URL}/api/leads`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -76,7 +77,7 @@ const LeadsTable = () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5001/api/leads/${editingId}`,
+        `${API_URL}/api/leads/${editingId}`,
         {
           method: "PUT",
           headers: {
@@ -112,7 +113,7 @@ const LeadsTable = () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5001/api/leads/${id}`,
+        `${API_URL}/api/leads/${id}`,
         {
           method: "DELETE",
           headers: {
