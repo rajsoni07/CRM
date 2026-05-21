@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import API_URL from "../config";
@@ -34,7 +34,7 @@ const Login = () => {
 
     }
   }catch(error){
-    console.error("Error during login:",error);
+    console.error("Error during signup:",error);
     alert("Something went wrong.Please try again later.");
 
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Ticket.css";
 import API_URL from "../config";
 function Ticket({ onTicketAdded }) {
