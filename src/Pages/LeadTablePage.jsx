@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import react from "react";
 import LeadTable from "../Components/LeadTable";
 
 const leadsTable =() => {
