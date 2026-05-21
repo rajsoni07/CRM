@@ -1,4 +1,3 @@
-import react from "react";
 import TicketTable from "../Components/TicketTable";
 
 const tickettable =() => {
